@@ -14,17 +14,17 @@ def authenticate(username, password):
 def main():
     st.title("Login Page")
 
-    username = st.text_input("Username")
-    password = st.text_input("Password", type="password")
+    #username = st.text_input("Username")
+    #password = st.text_input("Password", type="password")
 
-    if st.button("Login"):
-        if authenticate(username, password):
-            st.success("Authentication successful!")
-            st.write("Redirecting to Home Page...")
-            subprocess.Popen(["streamlit", "run", "home.py"])  # Open home.py in a separate process
-            st.stop()  # Stop the current script execution
-        else:
-            st.error("Invalid username or password")
+    #if st.button("Login"):
+     #   if authenticate(username, password):
+      #      st.success("Authentication successful!")
+       #     st.write("Redirecting to Home Page...")
+        #    subprocess.Popen(["streamlit", "run", "home.py"])  # Open home.py in a separate process
+         #   st.stop()  # Stop the current script execution
+        #else:
+         #   st.error("Invalid username or password")
 
 if __name__ == "__main__":
     main()
