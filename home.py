@@ -1,3 +1,4 @@
+import subprocess
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -7,6 +8,7 @@ from sklearn.model_selection import cross_val_score
 from sklearn.preprocessing import StandardScaler
 import numpy as np
 import time
+
 
 def load_data():
     data = pd.read_csv("data_electricity.csv")
@@ -87,7 +89,8 @@ def main():
         st.write("The estimated energy consumption is {:.5f}W".format(energy))
 
     if st.button("Go to Second Page"):
-        import second
+        subprocess.Popen(["streamlit", "run", "second.py"])
+        st.stop()
 
 if __name__ == '__main__':
     main()
